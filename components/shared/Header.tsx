@@ -4,6 +4,8 @@ import Link from 'next/link'
 import React from 'react'
 import { Button } from '../ui/button'
 import { User } from '@clerk/nextjs/server'
+import Navitems from './Navitems'
+import MobileNav from './MobileNav'
 
 const Header = () => {
   return (
@@ -12,9 +14,19 @@ const Header = () => {
 <Link href="/" className="w-36">
     <Image src="/assets/images/logo.svg" alt="logo" width={128} height={38} />
 </Link>
+
+<SignedIn>
+ <nav className="md:flex-between hidden w-full max-w-xs">
+  <Navitems/>
+  </nav> 
+</SignedIn>
+
+
+
 <div className="flex w-32 justify-end gap-3">
   <SignedIn>
     <UserButton afterSignOutUrl="/"/>
+    <MobileNav/>
     </SignedIn>  
     <SignedOut>
         <Button asChild className="rounded-full" size="lg">
