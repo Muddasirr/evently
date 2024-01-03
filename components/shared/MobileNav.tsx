@@ -1,4 +1,5 @@
 import React from 'react'
+import Navitems from './Navitems'
 import {
     Sheet,
     SheetContent,
@@ -8,6 +9,7 @@ import {
     SheetTrigger,
   } from "@/components/ui/sheet"
   import Image from 'next/image'
+  import { Separator } from '../ui/separator'
   
 
 const MobileNav = () => {
@@ -26,6 +28,8 @@ const MobileNav = () => {
     alt="logo"
     width={128}
     height={38}/>
+    <Separator className="border border-gray-50"/>
+    <Navitems/>
   </SheetContent>
 </Sheet>
 
